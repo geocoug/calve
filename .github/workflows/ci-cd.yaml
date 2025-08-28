@@ -59,8 +59,8 @@ jobs:
           enable-cache: true
       - name: Build sdist + wheel
         run: |
-          uvx build --sdist --wheel --outdir dist/
-          uvx twine check dist/*
+          uv build --sdist --wheel --out-dir dist/
+          uv run twine check dist/*
       - name: Upload dist artifact
         uses: actions/upload-artifact@v4
         with:
