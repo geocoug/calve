@@ -57,6 +57,8 @@ jobs:
         with:
           python-version: "3.13"
           enable-cache: true
+      - name: Install dependencies
+        run: uv sync --locked --all-extras --dev
       - name: Build sdist + wheel
         run: |
           uv build --sdist --wheel --out-dir dist/
