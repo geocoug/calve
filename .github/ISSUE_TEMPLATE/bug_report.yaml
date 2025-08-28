@@ -1,0 +1,76 @@
+name: "🐛 Bug Report"
+description: "Report something broken or unexpected in the library or CLI"
+labels: ["bug"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 Bug Report
+        Please provide as much detail as possible so we can reproduce the issue.
+
+  - type: input
+    id: version
+    attributes:
+      label: Library Version
+      description: What version of the library are you using? (`iceberg-elt --version`)
+      placeholder: "e.g. 0.4.2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: cli_command
+    attributes:
+      label: Which command failed?
+      description: If relevant, select the CLI command that caused this issue.
+      options:
+        - run
+        - report
+        - validate
+        - export
+        - other / na
+    validations:
+      required: false
+
+  - type: textarea
+    id: describe
+    attributes:
+      label: Describe the Bug
+      description: What happened? Include CLI commands, error messages, and screenshots if relevant.
+      placeholder: "Observed behavior vs expected behavior"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How can we replicate the issue?
+      placeholder: |
+        1. Run `calve load ...`
+        2. Observe error `...`
+        3. Expected result: table created successfully
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Describe where you're running the library.
+      placeholder: |
+        - OS: macOS / Linux / Windows
+        - Python: 3.11
+        - Backend: DuckDB v0.10.1
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs / Stack Traces
+      description: Paste any error logs or stack traces here.
+      render: shell
+    validations:
+      required: false

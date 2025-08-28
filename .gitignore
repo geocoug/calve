@@ -1,0 +1,31 @@
+# Environment variables
+.env
+
+# Custom vscode settings
+.vscode/
+
+# Python files
+.venv/
+*cache*
+.coverage
+backend/staticfiles/
+*.egg-info/
+.tox/
+.coverage*
+build/
+dist/
+
+# Log files
+*.log
+
+# Rendered documentation
+site/
+
+# R files
+*.rdb
+.Rproj.user
+
+# Ignore all files in the data folder except for the sql subfolder
+data/
+warehouse/
+*.csv

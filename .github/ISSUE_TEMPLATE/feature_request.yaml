@@ -1,0 +1,52 @@
+name: "✨ Feature Request"
+description: "Suggest an idea or enhancement for the library"
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Feature Request
+        Help us understand what you'd like to see in the library.
+
+  - type: input
+    id: context
+    attributes:
+      label: Context
+      description: What problem are you trying to solve?
+      placeholder: "e.g. Need a way to preview SQL templates before running"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: Describe your idea in detail.
+      placeholder: |
+        Example:
+        - Add a `--dry-run` flag to `iceberg-elt report run`
+        - Prints rendered SQL without running transformations
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you tried workarounds?
+      placeholder: "What else have you tried so far?"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P1 - Blocking my work
+        - P2 - Nice to have soon
+        - P3 - Low / Exploration
+    validations:
+      required: true
